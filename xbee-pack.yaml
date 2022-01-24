@@ -1,0 +1,11 @@
+schema-version: 1.0
+
+var:
+  version: 7.79.1
+
+builder: ./curl-builder
+
+provision:
+  - copy:
+      builder: curl
+      todir: /

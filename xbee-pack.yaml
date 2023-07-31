@@ -2,7 +2,7 @@ schema-version: 1.0
 
 type: builder
 
-in:
+var:
   version: 7.79.1
 
 dependencies:
@@ -10,15 +10,15 @@ dependencies:
 
 provision:
   - url:
-      from: https://curl.se/download/curl-{% version %}.tar.gz
-      todir: "{% xbeeSrc %}"
+      from: https://curl.se/download/curl-{{ .version }}.tar.gz
+      todir: "{{ .xbee.src }}"
 
 build:
   - shell:
       cmds:
         - ./configure --prefix=/usr --disable-static --with-openssl --enable-threaded-resolver --with-ca-path=/etc/ssl/certs
         - make
-        - make install DESTDIR={% xbeeOut %}
-      directory: "{% xbeeSrc %}/curl-{% version %}"
+        - make install DESTDIR={{ .xbee.out }}
+      directory: "{{ .xbee.src }}/curl-{{ .version }}"
 
 

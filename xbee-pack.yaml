@@ -5,7 +5,7 @@ type: builder
 var:
   version: 7.79.1
 
-dependencies:
+builders:
   - openssl
 
 provision:

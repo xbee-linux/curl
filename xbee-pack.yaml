@@ -9,9 +9,7 @@ dependencies:
   - openssl
 
 provision:
-  - url:
-      from: https://curl.se/download/curl-{{ .version }}.tar.gz
-      todir: "{{ .xbee.src }}"
+  url: https://curl.se/download/curl-{{ .version }}.tar.gz
 
 build:
   - shell:

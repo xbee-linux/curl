@@ -1,0 +1,22 @@
+schema-version: 1.0
+
+type: builder
+
+var:
+  version:
+
+dependencies:
+  - openssl
+
+provision:
+  url: https://curl.se/download/curl-{{ .version }}.tar.gz
+
+build:
+  - shell:
+      cmds:
+        - ./configure --prefix=/usr --disable-static --with-openssl --enable-threaded-resolver --with-ca-path=/etc/ssl/certs
+        - make
+        - make install DESTDIR={{ .xbee.out }}
+      directory: "{{ .xbee.src }}/curl-{{ .version }}"
+
+

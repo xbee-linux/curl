@@ -1,12 +1,10 @@
 schema-version: 1.0
 
-type: builder
-
 var:
   xbee:
     version:
 
-dependencies:
+dependency:
   - openssl
 
 provision:

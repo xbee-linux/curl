@@ -1,9 +1,5 @@
 schema-version: 1.0
 
-var:
-  xbee:
-    version:
-
 dependency:
   - openssl
 
